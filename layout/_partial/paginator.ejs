@@ -1,10 +1,11 @@
 <% if (page.total > 1){ %>
-      <% paginator({ 
+      <div class="mdui-prose">
+        <%- paginator({ 
         prev_text: __('paginator.prev_text'), 
         next_text: __('paginator.next_text'),
-        prev_class:"mdui-btn mdui-text-color-theme-text",
-        next_class:"mdui-btn mdui-text-color-theme-text",
-        current_class:"mdui-btn mdui-btn-active mdui-ripple mdui-text-color-theme-text",
-        page_class:"mdui-btn mdui-ripple mdui-text-color-theme-text"
-      }) %>
+        prev_class:"",
+        next_class:"",
+        current_class:"paginator-current",
+        page_class:"paginator-page"
+      }) %></div>
     <% } %>

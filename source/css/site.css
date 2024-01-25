@@ -4,3 +4,10 @@
     letter-spacing: var(--mdui-typescale-body-medium-tracking);
     font-weight: var(--mdui-typescale-body-medium-weight);
   }
+.paginator-current{
+  font-weight: bold;
+}
+.paginator-page{
+  padding-left: 16px;
+  padding-right: 16px;
+}
