@@ -5,6 +5,7 @@
   <meta name="description" content="<%-page.description||config.description%>">
   <meta name="author" content="<%-config.author%>">
   <%- meta_generator() %>
+  <%- open_graph({}) %>
     <title>
       <%if(page.title){%>
         <%= page.title %> - <%= config.title %>
