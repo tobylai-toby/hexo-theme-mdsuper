@@ -27,7 +27,7 @@ copyright: ""
 # see: https://twikoo.js.org/frontend.html
 twikoo: 
   enable: false
-  cdn: js/twikoo.all.min.js # or use cdn such as https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js
+  cdn: /js/twikoo.all.min.js # or use cdn such as https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js
   # twikoo settings:
   envId: ""
   region: '' 
