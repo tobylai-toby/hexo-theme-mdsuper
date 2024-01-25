@@ -1,0 +1,40 @@
+theme:
+  colorScheme: "#4fd8eb"
+  layout: dark # dark | light | auto
+
+# Navigation Drawer 导航栏
+drawer:
+  menu: # add your entries here 在此处添加您的条目
+    Home: # display text for "home page" 主页
+      icon: home # mdui icon
+      url: /
+    Categories: # catorgories 分类
+      icon: folder
+      url: /categories
+    Tags: # tags 标签
+      icon: bookmark
+      url: /tags
+    Archives: # archives 归档
+      icon: archive
+      url: /archives
+    About: # about 关于
+      icon: info
+      url: /about
+
+copyright: ""
+
+# supports twikoo comment system
+# see: https://twikoo.js.org/frontend.html
+twikoo: 
+  enable: false
+  cdn: js/twikoo.all.min.js # or use cdn such as https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js
+  # twikoo settings:
+  envId: ""
+  region: '' 
+  path: location.pathname # will eval this, be careful
+  lang: 'zh-CN' 
+
+# assets
+mdui:
+  css: https://unpkg.com/mdui@2.0.3/mdui.css
+  js: https://unpkg.com/mdui@2.0.3/mdui.global.js

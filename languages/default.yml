@@ -1,0 +1,24 @@
+# default
+
+paginator:
+  prev_text: "Prev"
+  next_text: "Next"
+  
+tag: Tags
+category: Categories
+archive: Archives
+
+total_posts:
+  zero: No posts
+  one: 1 post
+  other: "%d posts"
+
+total_categories:
+  zero: No categories
+  one: 1 category
+  other: "%d categories"
+
+total_tags:
+  zero: No tags
+  one: 1 tag
+  other: "%d tags"

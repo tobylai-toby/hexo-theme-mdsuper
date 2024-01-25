@@ -1,0 +1,13 @@
+<mdui-navigation-drawer close-on-overlay-click close-on-esc id="drawer">
+    <mdui-list>
+        <% for (name in theme.drawer.menu) { %>
+            
+            <mdui-list-item rounded icon="<%= theme.drawer.menu[name].icon %>"
+                href="<%- url_for(theme.drawer.menu[name].url) %>"
+                <%if(is_current(theme.drawer.menu[name].url)){%>active<%}%>>
+                <%= name %>
+            </mdui-list-item>
+            
+            <% } %>
+    </mdui-list>
+</mdui-navigation-drawer>

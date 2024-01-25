@@ -1,0 +1,18 @@
+<div class="mdui-prose">
+  <%if(page.category){%>
+  <h1><%-__("category")%> <%-page.category%></h1>
+  <%-partial("_partial/setTitle",{title:`${__("category")} ${page.category} - ${config.title}`})%>
+  <%}else if(page.tag){%>
+  <h1><%-__("tag")%> <%-page.tag%></h1>
+  <%-partial("_partial/setTitle",{title:`${__("tag")} ${page.tag} - ${config.title}`})%>
+  <%}else if(page.archive){%>
+  <h1><%-__("archive")%></h1>
+  <%-partial("_partial/setTitle",{title:`${__("archive")} - ${config.title}`})%>
+  <%}%>
+                    <span><%-_p("total_posts",page.posts.length)%> </span>
+</div>
+<br>
+<% page.posts.each(function (post) { %>
+<%- partial('_partial/post-short',{post:post}) %>
+<% }) %>
+<%- partial('_partial/paginator') %>

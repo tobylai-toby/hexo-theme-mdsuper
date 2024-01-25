@@ -1,0 +1,9 @@
+<%-css("/tobylai/css/categories")%>
+<%if(site.categories){%>
+    <div class="mdui-prose">
+        <h1>分类</h1>
+        <h3><%-_p("total_categories",site.categories.length)%></h3>
+        <br>
+        <%- list_categories(site.categories, {show_count: true, order_by: 'title'}) %>
+    <br>
+    <%}%>

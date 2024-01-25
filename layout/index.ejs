@@ -1,0 +1,7 @@
+<br>
+<% page.posts.each(function (post) { %>
+    <%- partial('_partial/post-short',{post:post}) %>
+    <br>
+    <% }) %>
+    <%- partial('_partial/paginator') %>
+

@@ -1,0 +1,33 @@
+<mdui-card variant="filled" style="padding: 16px;width: 100%;">
+    <div class="mdui-prose">
+        <h1 style="margin-bottom: 8px;">
+            <%= page.title %>
+        </h1>
+        <span class="post-date">
+            <mdui-icon name="date_range" style="vertical-align: text-bottom;font-size: 18px;"></mdui-icon>
+            <%- full_date(page.date) %> &nbsp; <mdui-icon name="update"
+                    style="vertical-align: text-bottom;font-size: 18px;"></mdui-icon>
+                <%- full_date(page.updated) %>
+        </span>
+        <br>
+        <%if(page.categories){%><span><%-__("category")%> <% page.categories.each(function (cate) { %>
+                    <!-- <mdui-chip href="<%- url_for(cate.path) %>" variant="filter" style="vertical-align: middle;">
+                        <%= cate.name %>
+                    </mdui-chip> -->
+                    <a href="<%- url_for(cate.path) %>">
+                        <%= cate.name %>
+                    </a>
+                    <% }); %>
+                        <br>
+            </span>
+            <%}%>
+                <%if(page.tags){%><%-__("tag")%> <% page.tags.each(function (tag) { %>
+                        <mdui-chip href="<%- url_for(tag.path) %>" variant="filter" style="vertical-align: middle;">
+                            <%= tag.name %>
+                        </mdui-chip>
+                        <% }); %>
+                            <% }%>
+                                <%- page.content %>
+    </div>
+</mdui-card>
+<%-partial("_partial/twikoo")%>

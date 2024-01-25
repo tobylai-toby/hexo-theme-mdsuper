@@ -1,0 +1,6 @@
+.post-date {
+    line-height: var(--mdui-typescale-body-medium-line-height);
+    font-size: var(--mdui-typescale-body-medium-size);
+    letter-spacing: var(--mdui-typescale-body-medium-tracking);
+    font-weight: var(--mdui-typescale-body-medium-weight);
+  }

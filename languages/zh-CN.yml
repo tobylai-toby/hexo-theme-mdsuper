@@ -1,0 +1,25 @@
+# zh-CN
+# 到站点配置的config.yml设置language为zh-CN
+
+paginator:
+  prev_text: "上一页"
+  next_text: "下一页"
+
+tag: "标签"
+category: "分类"
+archive: "归档"
+
+total_posts:
+  zero: 无文章
+  one: 1 篇文章
+  other: "%d 篇文章"
+
+total_categories:
+  zero: 无分类
+  one: 1 个分类
+  other: "%d 个分类"
+
+total_tags:
+  zero: 无标签
+  one: 1 个标签
+  other: "%d 个标签"

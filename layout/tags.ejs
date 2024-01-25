@@ -1,0 +1,15 @@
+<!-- <div class="mdui-row-sm-3 mdui-row-xs-1"> -->
+<% site.tags.each(function (tag) { %>
+    <!-- <div class="mdui-col"> -->
+    <mdui-card clickable href="<%- url_for(tag.path) %>" variant="filled" style="padding: 8px;width: 32%;">
+        <div class="mdui-prose">
+            <h3 style="margin-bottom: 8px;">
+                <%-tag.name%>
+            </h3>
+            <span><%-_p("total_tags",tag.posts.length)%></span>
+            <br>
+        </div>
+    </mdui-card>
+    <!-- </div> -->
+    <% }) %>
+        <!-- </div> -->

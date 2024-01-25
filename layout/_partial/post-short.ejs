@@ -1,0 +1,21 @@
+<mdui-card clickable variant="filled" href="<%- url_for(post.path) %>" style="padding: 16px;">
+    <div class="mdui-prose">
+        <h1 style="margin-bottom: 8px;">
+            <%= post.title %>
+        </h1>
+        <span><%- full_date(post.date) %></span>
+        <br>
+        <% post.tags.each(function (tag) { %>
+            <mdui-chip href="<%- url_for(tag.path) %>" variant="filter" style="vertical-align: middle;">
+                <%= tag.name %>
+            </mdui-chip>
+            <% }); %>
+                <p>
+                    <%if(post.excerpt){%>
+                        <%- strip_html(post.excerpt) %>
+                            <%}else{%>
+                                <%- truncate(strip_html(post.content),{length:100}) %>
+                                    <%}%>
+                </p>
+    </div>
+</mdui-card>

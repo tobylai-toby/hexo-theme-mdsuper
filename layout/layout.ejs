@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="mdui-theme-<%=theme.theme.layout%>">
+<%- partial('_partial/head') %>
+
+  <body class="line-numbers">
+    <mdui-layout>
+      <mdui-top-app-bar>
+        <mdui-button-icon icon=" menu" id="menu-btn">
+        </mdui-button-icon>
+        <mdui-top-app-bar-title>
+          <%=config.title%>
+        </mdui-top-app-bar-title>
+        <div style="flex-grow: 1"></div>
+      </mdui-top-app-bar>
+      <%- partial("_partial/drawer") %>
+        <mdui-layout-main style="min-height: 800px;" id="main">
+          <div style="padding-left: 16px;padding-right: 16px;">
+            <%- body %>
+            <br>
+            <span><%-theme.copyright%></span>
+          </div>
+        </mdui-layout-main>
+    </mdui-layout>
+    <script>
+      mdui.setColorScheme('<%=theme.theme.colorScheme%>');
+      const navigationDrawer = document.querySelector("#drawer");
+      const mainlayout=document.querySelector("#main");
+      const breakpointCondition = mdui.breakpoint();
+      if (breakpointCondition.up('sm')) {
+        if (localStorage.getItem('navigationDrawer') == null) {
+          localStorage.setItem('navigationDrawer', "true");
+        }
+        navigationDrawer.style.height="0px";
+        navigationDrawer.setAttribute("open",(localStorage.getItem('navigationDrawer') == "true" ? true : false))
+        navigationDrawer.style.height="100%";
+      }
+      const menuBtn = document.querySelector("#menu-btn");
+      menuBtn.addEventListener("click", () => {
+        navigationDrawer.open = !navigationDrawer.open;
+        localStorage.setItem('navigationDrawer', navigationDrawer.open.toString());
+      });
+    </script>
+    <%-js("js/prism")%>
+  </body>
+
+</html>
