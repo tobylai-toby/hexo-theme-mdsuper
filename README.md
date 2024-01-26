@@ -45,6 +45,8 @@ theme:
   colorScheme: "#4fd8eb" # change color theme
   layout: dark # dark | light | auto
 
+favicon: "" # path( or url) of avatar such as /favicon.png
+
 drawer:
   menu: 
     Home: 
@@ -64,6 +66,11 @@ twikoo:
   region: '' 
   path: location.pathname # will eval this, be careful
   lang: 'zh-CN' 
+
+# display in the card at the top of the page under the subtitle
+display_index_top:
+  text: "dev-mdsuper"
+  avatar: "" # path( or url) of avatar such as /avatar.png
 
 # assets
 mdui:
