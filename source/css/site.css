@@ -1,13 +1,17 @@
 .post-date {
-    line-height: var(--mdui-typescale-body-medium-line-height);
-    font-size: var(--mdui-typescale-body-medium-size);
-    letter-spacing: var(--mdui-typescale-body-medium-tracking);
-    font-weight: var(--mdui-typescale-body-medium-weight);
-  }
+  line-height: var(--mdui-typescale-body-medium-line-height);
+  font-size: var(--mdui-typescale-body-medium-size);
+  letter-spacing: var(--mdui-typescale-body-medium-tracking);
+  font-weight: var(--mdui-typescale-body-medium-weight);
+}
 .paginator-current{
-  font-weight: bold;
+font-weight: bold;
 }
 .paginator-page{
-  padding-left: 16px;
-  padding-right: 16px;
+padding-left: 16px;
+padding-right: 16px;
+}
+.post h1,h2,h3,h4,h4,h6{
+margin-top: 8px!important;
+margin-bottom: 8px!important;
 }

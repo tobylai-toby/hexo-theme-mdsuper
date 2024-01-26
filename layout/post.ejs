@@ -22,9 +22,9 @@
             </span>
             <%}%>
                 <%if(page.tags){%><%-__("tag")%> <% page.tags.each(function (tag) { %>
-                        <mdui-chip href="<%- url_for(tag.path) %>" variant="filter" style="vertical-align: middle;">
+                        <a href="<%- url_for(tag.path) %>">
                             <%= tag.name %>
-                        </mdui-chip>
+                        </a>
                         <% }); %>
                             <% }%>
                                 <%- page.content %>

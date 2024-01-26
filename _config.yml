@@ -35,7 +35,7 @@ twikoo:
   lang: 'zh-CN' 
 
 # display in the card at the top of the page under the subtitle
-display_index_top: ""
+display_index_top: "dev-mdsuper"
 
 # assets
 mdui:
