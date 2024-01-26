@@ -10,12 +10,12 @@
         </h1>
         <span class="post-date">
             <mdui-icon name="date_range" style="vertical-align: text-bottom;font-size: 18px;"></mdui-icon>
-            <%- full_date(post.date) %> &nbsp; <mdui-icon name="update"
+            <%= full_date(post.date) %> &nbsp; <mdui-icon name="update"
                     style="vertical-align: text-bottom;font-size: 18px;"></mdui-icon>
-                <%- full_date(post.updated) %>
+                <%= full_date(post.updated) %>
         </span>
         <br>
-        <%if(post.categories){%><span><%-__("category")%> <% post.categories.each(function (cate) { %>
+        <%if(post.categories){%><span><%=__("category")%> <% post.categories.each(function (cate) { %>
                     <!-- <mdui-chip href="<%- url_for(cate.path) %>" variant="filter" style="vertical-align: middle;">
                         <%= cate.name %>
                     </mdui-chip> -->
@@ -25,7 +25,7 @@
                     <% }); %>
             </span>
             <%}%>
-                <%if(post.tags){%><span>| <%-__("tag")%> <% post.tags.each(function (tag) { %>
+                <%if(post.tags){%><span>| <%=__("tag")%> <% post.tags.each(function (tag) { %>
                         <a href="<%- url_for(tag.path) %>" variant="filter">
                             <%= tag.name %>
                         </a>
@@ -34,7 +34,7 @@
         
                 <p>
                     <%if(post.excerpt){%>
-                        <%- strip_html(post.excerpt) %>
+                        <%= strip_html(post.excerpt) %>
                             <%}else{%>
                                 <%- truncate(strip_html(post.content),{length:100}) %>
                                     <%}%>

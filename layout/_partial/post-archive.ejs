@@ -1,12 +1,12 @@
-<mdui-card clickable href="<%- url_for(post.path) %>" variant="filled" style="padding: 8px;width: 32%;">
+<mdui-card clickable href="<%= url_for(post.path) %>" variant="filled" style="padding: 8px;width: 32%;">
     <div class="mdui-prose">
         <h3 style="margin-bottom: 8px;">
             <%= post.title %>
         </h3>
-        <span><%- full_date(post.date) %></span>
+        <span><%= full_date(post.date) %></span>
         <br>
         <% post.tags.each(function (tag) { %>
-            <mdui-chip href="<%- url_for(tag.path) %>" variant="filter" style="vertical-align: middle;">
+            <mdui-chip href="<%= url_for(tag.path) %>" variant="filter" style="vertical-align: middle;">
                 <%= tag.name %>
             </mdui-chip>
             <% }); %>
