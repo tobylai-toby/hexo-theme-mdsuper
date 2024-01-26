@@ -35,7 +35,9 @@ twikoo:
   lang: 'zh-CN' 
 
 # display in the card at the top of the page under the subtitle
-display_index_top: "dev-mdsuper"
+display_index_top:
+  text: "dev-mdsuper"
+  avatar: "" # path( or url) of avatar such as /avatar.png
 
 # assets
 mdui:
