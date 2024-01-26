@@ -1,15 +1,32 @@
-<mdui-card clickable variant="filled" href="<%- url_for(post.path) %>" style="padding: 16px;">
+<mdui-card clickable variant="filled" href="<%- url_for(post.path) %>" style="padding: 16px;width:100%;">
     <div class="mdui-prose">
         <h1 style="margin-bottom: 8px;">
             <%= post.title %>
         </h1>
-        <span><%- full_date(post.date) %></span>
+        <span class="post-date">
+            <mdui-icon name="date_range" style="vertical-align: text-bottom;font-size: 18px;"></mdui-icon>
+            <%- full_date(post.date) %> &nbsp; <mdui-icon name="update"
+                    style="vertical-align: text-bottom;font-size: 18px;"></mdui-icon>
+                <%- full_date(post.updated) %>
+        </span>
         <br>
-        <% post.tags.each(function (tag) { %>
-            <mdui-chip href="<%- url_for(tag.path) %>" variant="filter" style="vertical-align: middle;">
-                <%= tag.name %>
-            </mdui-chip>
-            <% }); %>
+        <%if(post.categories){%><span><%-__("category")%> <% post.categories.each(function (cate) { %>
+                    <!-- <mdui-chip href="<%- url_for(cate.path) %>" variant="filter" style="vertical-align: middle;">
+                        <%= cate.name %>
+                    </mdui-chip> -->
+                    <a href="<%- url_for(cate.path) %>">
+                        <%= cate.name %>
+                    </a>
+                    <% }); %>
+            </span>
+            <%}%>
+                <%if(post.tags){%><span>| <%-__("tag")%> <% post.tags.each(function (tag) { %>
+                        <a href="<%- url_for(tag.path) %>" variant="filter">
+                            <%= tag.name %>
+                        </a>
+                        <% }); %></span>
+                            <% }%>
+        
                 <p>
                     <%if(post.excerpt){%>
                         <%- strip_html(post.excerpt) %>

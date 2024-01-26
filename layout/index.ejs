@@ -1,3 +1,9 @@
+<mdui-card variant="fill" style="width: 100%;background-color: rgb(var(--mdui-color-primary-container));padding: 8px;">
+    <div class="mdui-prose" style="text-align: center;">
+    <h1><%-markdown(config.title)%></h1>
+    <h3><%-markdown(config.subtitle)%></h3>
+    <%-markdown(theme.display_index_top)%>
+</div></mdui-card>
 <br>
 <% page.posts.each(function (post) { %>
     <%- partial('_partial/post-short',{post:post}) %>

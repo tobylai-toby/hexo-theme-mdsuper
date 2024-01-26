@@ -34,6 +34,9 @@ twikoo:
   path: location.pathname # will eval this, be careful
   lang: 'zh-CN' 
 
+# display in the card at the top of the page under the subtitle
+display_index_top: ""
+
 # assets
 mdui:
   css: https://unpkg.com/mdui@2.0.3/mdui.css
