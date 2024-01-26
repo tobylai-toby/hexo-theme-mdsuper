@@ -1,6 +1,10 @@
 <mdui-card clickable variant="filled" href="<%- url_for(post.path) %>" 
-    style="padding: 16px;width:100%;background-repeat: no-repeat;background-size: 100% auto;<%if(post.cover){%>background-image: url(<%-post.cover%>);<%}%>">
-    <div class="mdui-prose">
+    style="width:100%;">
+    <%if(post.cover){%>
+    <div style="width: 100%;height: 128px;background-repeat: space;background-size: 100% auto;background-image: url(<%-post.cover%>);">
+    </div>
+    <%}%>
+    <div class="mdui-prose" style="padding: 16px;">
         <h1 style="margin-bottom: 8px;">
             <%= post.title %>
         </h1>
