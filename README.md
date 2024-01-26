@@ -24,6 +24,17 @@ Go to [prismjs download](https://prismjs.com/download.html) to download a custom
 - Move `prism.js` to `your-hexo-site/themes/mdsuper/source/js/prism.js`.
 - Move `prism.css` to `your-hexo-site/themes/mdsuper/source/css/prism.css`.
 
+## Cover
+```markdown
+---
+title: 
+date: 
+tags: 
+categories: 
+cover: cover image url
+---
+```
+
 ## Configuration
 go to `your-hexo-site/themes/mdsuper/_config.yml` and configure it.
 ```yaml

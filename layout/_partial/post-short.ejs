@@ -1,4 +1,5 @@
-<mdui-card clickable variant="filled" href="<%- url_for(post.path) %>" style="padding: 16px;width:100%;">
+<mdui-card clickable variant="filled" href="<%- url_for(post.path) %>" 
+    style="padding: 16px;width:100%;background-repeat: no-repeat;background-size: 100% auto;<%if(post.cover){%>background-image: url(<%-post.cover%>);<%}%>">
     <div class="mdui-prose">
         <h1 style="margin-bottom: 8px;">
             <%= post.title %>

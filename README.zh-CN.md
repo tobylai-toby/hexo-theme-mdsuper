@@ -23,6 +23,17 @@ mdsuper 使用 [prismjs](https://prismjs.com/) 高亮代码.
 - 移动 `prism.js` 到 `your-hexo-site/themes/mdsuper/source/js/prism.js`
 - 移动 `prism.css` 到 `your-hexo-site/themes/mdsuper/source/css/prism.css`
 
+## 文章封面
+```markdown
+---
+title: 
+date: 
+tags: 
+categories: 
+cover: 封面URL
+---
+```
+
 ## 配置
 去 `your-hexo-site/themes/mdsuper/_config.yml` 进行配置
 ```yaml
