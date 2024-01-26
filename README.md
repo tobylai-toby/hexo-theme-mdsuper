@@ -1,5 +1,8 @@
 # hexo-theme-mdsuper
+![1706268121039](README/1706268121039.png)
+
 [简体中文](https://github.com/tobylai-toby/hexo-theme-mdsuper/blob/main/README.zh-CN.md)
+
 A [hexo](https://hexo.io) blog theme using [mdui-v2](https://mdui.org) with Material You (Material Design 3). 
 Supports [twikoo](https://twikoo.js.org) comment system and [Prismjs](https://prismjs.com/) highlight.
 

@@ -1,4 +1,6 @@
 # hexo-theme-mdsuper
+![1706268121039](README/1706268121039.png)
+
 一个使用 [mdui-v2](https://mdui.org) 的 Material You (Material Design 3) 风格的 [hexo](https://hexo.io) 博客主题。
 支持 [twikoo](https://twikoo.js.org) 评论系统和 [Prismjs](https://prismjs.com/) 高亮。
 
