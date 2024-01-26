@@ -2,6 +2,8 @@ theme:
   colorScheme: "#4fd8eb"
   layout: dark # dark | light | auto
 
+favicon: "/avatar.png" # path( or url) of avatar such as /favicon.png
+
 # Navigation Drawer 导航栏
 drawer:
   menu: # add your entries here 在此处添加您的条目
