@@ -1,50 +1,73 @@
 <mdui-card variant="filled" style="padding: 16px;width: 100%;">
-    <div class="mdui-prose post">
-      <h1 style="margin-bottom: 8px;">
-        <%= page.title %>
-      </h1>
-      <span class="post-date">
-        <mdui-icon name="date_range" style="vertical-align: text-bottom;font-size: 18px;"></mdui-icon>
-        <%= full_date(page.date) %> &nbsp; <mdui-icon name="update" style="vertical-align: text-bottom;font-size: 18px;"></mdui-icon>
+  <div class="mdui-prose post" id="post-all">
+    <h1 style="margin-bottom: 8px;">
+      <%= page.title %>
+    </h1>
+    <span class="post-date">
+      <mdui-icon name="date_range" style="vertical-align: text-bottom;font-size: 18px;"></mdui-icon>
+      <%= full_date(page.date) %> &nbsp; <mdui-icon name="update"
+          style="vertical-align: text-bottom;font-size: 18px;"></mdui-icon>
         <%= full_date(page.updated) %>
-      </span>
-      <br>
-      <%if(page.categories){%><span><%=__("category")%>
-        <% page.categories.each(function (cate) { %>
-        <!-- <mdui-chip href="<%= url_for(cate.path) %>" variant="filter" style="vertical-align: middle;">
+    </span>
+    <br>
+    <%if(page.categories){%><span>
+        <%=__("category")%>
+          <% page.categories.each(function (cate) { %>
+            <!-- <mdui-chip href="<%= url_for(cate.path) %>" variant="filter" style="vertical-align: middle;">
                           <%= cate.name %>
                       </mdui-chip> -->
-        <a href="<%= url_for(cate.path) %>">
-          <%= cate.name %>
-        </a>
-        <% }); %>
-        <br>
+            <a href="<%= url_for(cate.path) %>">
+              <%= cate.name %>
+            </a>
+            <% }); %>
+              <br>
       </span>
       <%}%>
-                  <%if(page.tags){%><%=__("tag")%>
-      <% page.tags.each(function (tag) { %>
-      <a href="<%= url_for(tag.path) %>">
-        <%= tag.name %>
-      </a>
-      <% }); %>
-      <% }%>
-      <!-- photos gallery -->
-  <%if(page.photos){%>
-  <mdui-tabs value="1" placement="bottom">
-  <%for(let i=0;i<page.photos.length;i++){%>
-    <mdui-tab value="<%=i+1%>"><%=i+1%></mdui-tab>
-    <%}%>
-    <%for(let i=0;i<page.photos.length;i++){%>
-    <mdui-tab-panel slot="panel" value="<%=i+1%>" style="width: 100%;">
-      <div style="width: 100%;display: flex;justify-content: center;align-items: center;">
-        <img src="<%=page.photos[i]%>" alt="photo gallery <%=i+1%>" style="height: 400px;">
-      </div>
-    </mdui-tab-panel>
-    <%}%>
-  </mdui-tabs>
-  <%}%>
-      <!-- content -->
-      <%- page.content %>
-    </div>
-  </mdui-card>
-  <%- partial("_partial/twikoo")%>
+        <%if(page.tags){%>
+          <%=__("tag")%>
+            <% page.tags.each(function (tag) { %>
+              <a href="<%= url_for(tag.path) %>">
+                <%= tag.name %>
+              </a>
+              <% }); %>
+                <% }%>
+                  <!-- photos gallery -->
+                  <%if(page.photos.length!=0){%>
+                    <div class="f-carousel" id="myCarousel">
+                      <div class="f-carousel__viewport">
+                        <div class="f-carousel__track">
+                          <%for(let i=0;i<page.photos.length;i++){%>
+                            <div class="f-carousel__slide" style="width: 100%;">
+                              <div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+                                <img src="<%=page.photos[i]%>" alt="<%=i+1%>" style="height: 400px;">
+                              </div>
+                            </div>
+                            <%}%>
+                        </div>
+                      </div>
+                    </div>
+                    <%}%>
+                      <!-- content -->
+                      <%- page.content %>
+  </div>
+</mdui-card>
+<script>
+  const $ = mdui.$;
+  $("#post-all").find("img").each((index, ele) => {
+    $(ele).replaceWith(`<a data-src="${$(ele).prop("src")}" class="fancybox-enabled" data-fancybox="picture" data-caption="${$(ele).prop("alt")}">${ele.outerHTML}</a>`)
+  });
+  Fancybox.bind(".fancybox-enabled", {
+    on: {
+      ready: () => {
+        $("mdui-top-app-bar").addClass("invisible")
+      }, close: () => {
+        $("mdui-top-app-bar").removeClass("invisible")
+      }
+    }
+  });
+  const container = document.getElementById("myCarousel");
+  const options = { infinite: false };
+
+  new Carousel(container, options);
+</script>
+<%- partial("_partial/twikoo")%>

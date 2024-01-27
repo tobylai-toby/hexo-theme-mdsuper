@@ -4,14 +4,30 @@
   letter-spacing: var(--mdui-typescale-body-medium-tracking);
   font-weight: var(--mdui-typescale-body-medium-weight);
 }
-.paginator-current{
-font-weight: bold;
+
+.paginator-current {
+  font-weight: bold;
 }
-.paginator-page{
-padding-left: 16px;
-padding-right: 16px;
+
+.paginator-page {
+  padding-left: 16px;
+  padding-right: 16px;
 }
-.post h1,h2,h3,h4,h4,h6{
-margin-top: 8px!important;
-margin-bottom: 8px!important;
+
+.post h1,
+h2,
+h3,
+h4,
+h4,
+h6 {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
+
+.invisible {
+  display: none;
+}
+
+a.fancybox-enabled:focus, a.fancybox-enabled:hover {
+  border-bottom: 0px;
 }

@@ -5,28 +5,34 @@
   <meta name="description" content="<%-page.description||config.description%>">
   <meta name="author" content="<%-config.author%>">
   <%- meta_generator() %>
-  <%- open_graph({}) %>
-  <link rel="icon" href="<%-theme.favicon%>">
-    <title>
-      <%if(page.title){%>
-        <%= page.title %> - <%= config.title %>
-            <%}else{%>
-              <%= config.title %>
-                <%}%>
-    </title>
-        <link rel="stylesheet" href="<%=theme.mdui.css%>">
-        <style>
-          /*禁用mdui对code的样式，因为它干扰了prism.js*/
-          .mdui-prose pre code{
-            background-color: transparent;
-            padding: 0px 0px;
-          }
-        </style>
-        <script type="text/javascript" src="<%=theme.mdui.js%>"></script>
-        <%- css("css/prism")%>
+    <%- open_graph({}) %>
+      <link rel="icon" href="<%-theme.favicon%>">
+      <title>
+        <%if(page.title){%>
+          <%= page.title %> - <%= config.title %>
+              <%}else{%>
+                <%= config.title %>
+                  <%}%>
+      </title>
+      <link rel="stylesheet" href="<%=theme.mdui.css%>">
+      <style>
+        /*禁用mdui对code的样式，因为它干扰了prism.js*/
+        .mdui-prose pre code {
+          background-color: transparent;
+          padding: 0px 0px;
+        }
+      </style>
+      <script type="text/javascript" src="<%=theme.mdui.js%>"></script>
+      <!-- <script src="/fancybox/fancybox.umd.js"></script>
+      <link rel="stylesheet" href="/fancybox/fancybox.css" /> -->
+      <%- js("fancybox/fancybox.umd.js")%>
+      <%- css("fancybox/fancybox")%>
+      <%- js("carousel/carousel.umd.js")%>
+      <%- css("carousel/carousel")%>
+      <%- css("css/prism")%>
         <%- css("css/site")%>
-        <%- css("css/katex.min")%>
-        <%- css("css/font-material-icon-filled/MaterialIconFilled")%>
-        <!-- Filled -->
-        <!-- fonts.googleapis.com -> fonts.loli.net-->
+          <%- css("css/katex.min")%>
+            <%- css("css/font-material-icon-filled/MaterialIconFilled")%>
+              <!-- Filled -->
+              <!-- fonts.googleapis.com -> fonts.loli.net-->
 </head>
