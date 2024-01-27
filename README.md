@@ -6,6 +6,13 @@
 A [hexo](https://hexo.io) blog theme using [mdui-v2](https://mdui.org) with Material You (Material Design 3). 
 Supports [twikoo](https://twikoo.js.org) comment system and [Prismjs](https://prismjs.com/) highlight.
 
+## Feature
+- front-matter `photos` gallery (using fancybox & carousel)
+- prismjs highlight
+- twikoo comment system
+- mdui v2
+- fancybox for images
+
 ## Install
 ```bash
 cd your-hexo-site/

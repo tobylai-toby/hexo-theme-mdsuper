@@ -4,6 +4,13 @@
 一个使用 [mdui-v2](https://mdui.org) 的 Material You (Material Design 3) 风格的 [hexo](https://hexo.io) 博客主题。
 支持 [twikoo](https://twikoo.js.org) 评论系统和 [Prismjs](https://prismjs.com/) 高亮。
 
+## 特性
+- front-matter `photos` 图库 (使用 fancybox & carousel)
+- prismjs 代码高亮
+- twikoo 评论系统
+- mdui v2
+- fancybox 用于图片点击放大
+
 ## 安装
 ```bash
 cd your-hexo-site/
