@@ -10,6 +10,7 @@ drawer:
     Home: # display text for "home page" 主页
       icon: home # mdui icon
       url: /
+      home: true
     Categories: # catorgories 分类
       icon: folder
       url: /categories
