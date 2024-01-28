@@ -14,7 +14,7 @@
                 <%= config.title %>
                   <%}%>
       </title>
-      <link rel="stylesheet" href="<%=theme.mdui.css%>">
+      <%-css(theme.mdui.css)%>
       <style>
         /*禁用mdui对code的样式，因为它干扰了prism.js*/
         .mdui-prose pre code {
@@ -22,7 +22,7 @@
           padding: 0px 0px;
         }
       </style>
-      <script type="text/javascript" src="<%=theme.mdui.js%>"></script>
+      <%-js(theme.mdui.js)%>
       <!-- <script src="/fancybox/fancybox.umd.js"></script>
       <link rel="stylesheet" href="/fancybox/fancybox.css" /> -->
       <%- js("fancybox/fancybox.umd.js")%>
@@ -34,5 +34,5 @@
           <%- css("css/katex.min")%>
             <%- css("css/font-material-icon-filled/MaterialIconFilled")%>
               <!-- Filled -->
-              <!-- fonts.googleapis.com -> fonts.loli.net-->
+              <script>window.$=mdui.$</script>
 </head>

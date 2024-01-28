@@ -1,0 +1,31 @@
+<script>const searchxml_url = "<%=theme.search.xml%>";</script>
+<%- js("js/mdsuper-search")%>
+    <mdui-dialog close-on-overlay-click close-on-esc fullscreen id="search-dlg">
+        <mdui-top-app-bar slot="header" style="padding: 32px;">
+            <mdui-top-app-bar-title>
+                <%=__("search")%>
+            </mdui-top-app-bar-title>
+            <mdui-button-icon icon="close" id="search-dlg-close"></mdui-button-icon>
+        </mdui-top-app-bar>
+        <mdui-text-field icon="search" label='<%=__("search")%>' id="search-input"></mdui-text-field>
+        <mdui-list id="search-res-list">
+        </mdui-list>
+    </mdui-dialog>
+    <script>
+        $("#search-dlg-close").on("click", function () {
+            $("#search-dlg").get(0).open = false;
+        });
+        $("#search-input").get(0).addEventListener('input', function () {
+            let val = $(this).val().toLowerCase();
+            $("#search-res-list").html("");
+            if (!val) return;
+            let keywords = val.split(" ").filter((x)=>x.length>=2);
+            let searchRes = search(keywords);
+            searchRes.forEach((dat) => {
+                $("#search-res-list").append(`<mdui-list-item href="${dat.url}" rounded headline-line="1" description-line="3">
+          ${highlightSearch(dat.title, keywords)}
+          <span slot="description">${highlightSearch(dat.content, keywords)}</span>
+        </mdui-list-item>`);
+            })
+        })
+    </script>

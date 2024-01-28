@@ -11,6 +11,7 @@
           <%=config.title%>
         </mdui-top-app-bar-title>
         <div style="flex-grow: 1"></div>
+        <%if(theme.search.enable){%><mdui-button-icon icon="search" id="search-dlg-btn"></mdui-button-icon><%}%>
       </mdui-top-app-bar>
       <%- partial("_partial/drawer") %>
         <mdui-layout-main style="min-height: 800px;" id="main">
@@ -21,6 +22,7 @@
           </div>
         </mdui-layout-main>
     </mdui-layout>
+    <%if(theme.search.enable){%><%- partial("_partial/searchdlg") %><%}%>
     <script>
       mdui.setColorScheme('<%=theme.theme.colorScheme%>');
       const navigationDrawer = document.querySelector("#drawer");
@@ -38,6 +40,10 @@
       menuBtn.addEventListener("click", () => {
         navigationDrawer.open = !navigationDrawer.open;
         localStorage.setItem('navigationDrawer', navigationDrawer.open.toString());
+      });
+      const searchBtn=document.querySelector("#search-dlg-btn");
+      searchBtn.addEventListener("click",() => {
+        document.querySelector("#search-dlg").open=true;
       });
     </script>
     <%-js("js/prism")%>

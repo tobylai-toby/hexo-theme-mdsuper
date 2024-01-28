@@ -23,3 +23,5 @@ total_tags:
   zero: 无标签
   one: 1 个标签
   other: "%d 个标签"
+
+search: "搜索"

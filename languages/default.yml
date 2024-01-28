@@ -22,3 +22,5 @@ total_tags:
   zero: No tags
   one: 1 tag
   other: "%d tags"
+
+search: "Search"

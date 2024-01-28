@@ -46,3 +46,8 @@ display_index_top:
 mdui:
   css: /css/mdui_2.0.3/mdui.css
   js: /css/mdui_2.0.3/mdui.global.js
+
+# install https://github.com/wzpan/hexo-generator-search and configure it following the readme
+search:
+  enable: true
+  xml: /search.xml # only supports xml

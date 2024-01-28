@@ -31,3 +31,9 @@ h6 {
 a.fancybox-enabled:focus, a.fancybox-enabled:hover {
   border-bottom: 0px;
 }
+:not(:defined) {
+  visibility: hidden;
+}
+.hlkw{
+  background-color: rgb(var(--mdui-color-surface-tint-color-light));
+}
