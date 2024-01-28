@@ -12,6 +12,7 @@ Supports [twikoo](https://twikoo.js.org) comment system and [Prismjs](https://pr
 - twikoo comment system
 - mdui v2
 - fancybox for images
+- local search for posts (requires [wzpan/hexo-generator-search](https://github.com/wzpan/hexo-generator-search))
 
 ## Install
 ```bash
@@ -83,6 +84,11 @@ display_index_top:
 mdui:
   css: https://unpkg.com/mdui@2.0.3/mdui.css
   js: https://unpkg.com/mdui@2.0.3/mdui.global.js
+
+# install https://github.com/wzpan/hexo-generator-search and configure it following the readme
+search:
+  enable: true
+  xml: /search.xml # only supports xml
 ```
 
 ## Preview Site

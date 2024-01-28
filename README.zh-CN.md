@@ -9,7 +9,8 @@
 - prismjs 代码高亮
 - twikoo 评论系统
 - mdui v2
-- fancybox 用于图片点击放大
+- fancybox 图片点击放大
+- 文章的本地搜索 (需要 [wzpan/hexo-generator-search](https://github.com/wzpan/hexo-generator-search))
 
 ## 安装
 ```bash
@@ -81,6 +82,11 @@ display_index_top:
 mdui:
   css: https://unpkg.com/mdui@2.0.3/mdui.css
   js: https://unpkg.com/mdui@2.0.3/mdui.global.js
+
+# 安装 https://github.com/wzpan/hexo-generator-search 并按照README进行配置
+search:
+  enable: true
+  xml: /search.xml # only supports xml
 ```
 ## 预览站点
 [Tobylai.fun](https://tobylai.fun)
