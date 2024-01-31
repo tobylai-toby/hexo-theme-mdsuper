@@ -7,7 +7,7 @@
   <%-partial("_partial/setTitle",{title:`${__("tag")} ${page.tag} - ${config.title}`})%>
   <%}else if(page.archive){%>
   <h1><%=__("archive")%></h1>
-  <%=partial("_partial/setTitle",{title:`${__("archive")} - ${config.title}`})%>
+  <%-partial("_partial/setTitle",{title:`${__("archive")} - ${config.title}`})%>
   <%}%>
                     <span><%=_p("total_posts",page.posts.length)%> </span>
 </div>
