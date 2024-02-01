@@ -39,7 +39,7 @@ copyright: ""
 #   lang: 'zh-CN' 
 
 comment:
-  system: none # none | twikoo | gitalk
+  system: waline # none | twikoo | gitalk | waline
   twikoo:  # see: https://twikoo.js.org/frontend.html
     cdn: 
       js: /js/twikoo.all.min.js # or use cdn such as https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js
@@ -66,6 +66,11 @@ comment:
     distractionFreeMode: false  # Facebook-like distraction free mode
     #proxy: 
     # you may need a reverse proxy to support cors, default url may not work in some places(such as cn)
+  waline:
+    cdn:
+      css: /css/waline.css
+      js: /js/waline.js
+    serverURL: ""
 
 # display in the card at the top of the page under the subtitle
 display_index_top:

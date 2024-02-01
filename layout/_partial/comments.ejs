@@ -11,9 +11,11 @@
         <%}else if(theme.comment.system=="gitalk" ){%>
             <link rel="stylesheet" href="<%=theme.comment.gitalk.cdn.css%>">
             <script src="<%=theme.comment.gitalk.cdn.js%>"></script>
-            <style>.gt-header-textarea{
-                color: black;
-            }</style>
+            <style>
+                .gt-header-textarea {
+                    color: black;
+                }
+            </style>
             <div id="gitalk-container"></div>
             <script>
                 var gitalk = new Gitalk(Object.assign(JSON.parse(`<%-JSON.stringify(theme.comment.gitalk)%>`),
@@ -21,5 +23,15 @@
                 ))
                 gitalk.render('gitalk-container')
             </script>
-            <%}%>
+            <%}else if(theme.comment.system=="waline" ){%>
+                <link rel="stylesheet" href="<%=theme.comment.waline.cdn.css%>">
+                <div id="tcomment"></div>
+                <script type="module">
+                    import { init } from '<%=theme.comment.waline.cdn.js%>';
+                
+                    init(Object.assign(JSON.parse(`<%-JSON.stringify(theme.comment.waline)%>`),
+                        { el: '#tcomment',dark:'html[data-theme="dark"]' }
+                    ));
+                </script>
                 <%}%>
+                    <%}%>
