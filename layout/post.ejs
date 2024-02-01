@@ -65,9 +65,11 @@
       }
     }
   });
+  <%if (page.photos && page.photos.length != 0) {%>
   const container = document.getElementById("myCarousel");
-  const options = { infinite: false };
+    const options = { infinite: false };
 
-  new Carousel(container, options);
+    new Carousel(container, options);
+  <%}%>
 </script>
-<%- partial("_partial/twikoo")%>
+<%- partial("_partial/comments")%>
