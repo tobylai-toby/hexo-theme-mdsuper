@@ -64,46 +64,16 @@ drawer:
 
 copyright: "" # text appear at the bottom of the page
 
-comment:
-  system: none # none | twikoo | gitalk
-  twikoo:  # see: https://twikoo.js.org/frontend.html
-    cdn: 
-      js: /js/twikoo.all.min.js # or use cdn such as https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js
-    
-    # twikoo settings:
-    envId: "https://twikoo.tobylai.fun"
-    region: '' # region, see twikoo documentation
-    path: location.pathname # will eval this, be careful
-    lang: 'zh-CN' 
-  gitalk: # see https://github.com/gitalk/gitalk
-    cdn:
-      css: /css/gitalk.css
-      js: /js/gitalk.min.js
-
-    # gitalk settings:
-    clientID: '' # GitHub Application Client ID
-    clientSecret: '' # GitHub Application Client Secret
-    repo: '' # GitHub repo
-    owner: '' # GitHub repo owner
-    admin: [] # GitHub repo owner and collaborators, only these guys can initialize github issues
-    id: decodeURIComponent(location.pathname)# will eval this, be careful
-    # this is like /2024/01/24/xxxxxxxxxx ,make sure the length < 50
-    # Ensure uniqueness and length less than 50
-    distractionFreeMode: false  # Facebook-like distraction free mode
-    #proxy: 
-    # you may need a reverse proxy to support cors, default url may not work in some places(such as cn)
-
 # supports twikoo comment system
-# this way only supports v0.2.0-beta, move to "comment" instead
 # see: https://twikoo.js.org/frontend.html
-# twikoo: 
-#   enable: false
-#   cdn: js/twikoo.all.min.js 
-#   # twikoo settings:
-#   envId: ""
-#   region: '' 
-#   path: location.pathname # will eval this, be careful
-#   lang: 'zh-CN' 
+twikoo: 
+  enable: false
+  cdn: js/twikoo.all.min.js 
+  # twikoo settings:
+  envId: ""
+  region: '' 
+  path: location.pathname # will eval this, be careful
+  lang: 'zh-CN' 
 
 # display in the card at the top of the page under the subtitle
 display_index_top:

@@ -1,0 +1,13 @@
+<%if(page.comments&&theme.twikoo.enable){%>
+    <div id="tcomment"></div>
+    <script src="<%=theme.twikoo.cdn%>"></script>
+    <script>
+        twikoo.init({
+            envId: '<%=theme.twikoo.envId%>', 
+            el: '#tcomment',
+            lang: '<%=theme.twikoo.lang%>', 
+            region: '<%=theme.twikoo.region%>',
+            path: eval('<%=theme.twikoo.path%>'),
+        })
+    </script>
+    <%}%>
