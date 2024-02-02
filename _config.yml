@@ -39,7 +39,7 @@ copyright: ""
 #   lang: 'zh-CN' 
 
 comment:
-  system: waline # none | twikoo | gitalk | waline
+  system: none # none | twikoo | gitalk | waline
   twikoo:  # see: https://twikoo.js.org/frontend.html
     cdn: 
       js: /js/twikoo.all.min.js # or use cdn such as https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js
