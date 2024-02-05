@@ -11,42 +11,42 @@
           <%=config.title%>
         </mdui-top-app-bar-title>
         <div style="flex-grow: 1"></div>
-        <%if(theme.search.enable){%><mdui-button-icon icon="search" id="search-dlg-btn"></mdui-button-icon><%}%>
+        <%if(theme.search.enable){%><mdui-button-icon icon="search" id="search-dlg-btn"></mdui-button-icon>
+          <%}%>
       </mdui-top-app-bar>
       <%- partial("_partial/drawer") %>
         <mdui-layout-main style="min-height: 800px;" id="main">
-          <div style="padding-left: 16px;padding-right: 16px;">
+          <div style="padding-left: 16px;padding-right: 16px;" id="content">
             <%- body %>
-            <br>
-            <span><%-theme.copyright%></span>
+              <br>
+              <span><%-theme.copyright%></span>
           </div>
         </mdui-layout-main>
     </mdui-layout>
-    <%if(theme.search.enable){%><%- partial("_partial/searchdlg") %><%}%>
-    <script>
-      mdui.setColorScheme('<%=theme.theme.colorScheme%>');
-      const navigationDrawer = document.querySelector("#drawer");
-      const mainlayout=document.querySelector("#main");
-      const breakpointCondition = mdui.breakpoint();
-      if (breakpointCondition.up('sm')) {
-        if (localStorage.getItem('navigationDrawer') == null) {
-          localStorage.setItem('navigationDrawer', "true");
-        }
-        navigationDrawer.style.height="0px";
-        navigationDrawer.setAttribute("open",(localStorage.getItem('navigationDrawer') == "true" ? true : false))
-        navigationDrawer.style.height="100%";
-      }
-      const menuBtn = document.querySelector("#menu-btn");
-      menuBtn.addEventListener("click", () => {
-        navigationDrawer.open = !navigationDrawer.open;
-        localStorage.setItem('navigationDrawer', navigationDrawer.open.toString());
-      });
-      const searchBtn=document.querySelector("#search-dlg-btn");
-      searchBtn.addEventListener("click",() => {
-        document.querySelector("#search-dlg").open=true;
-      });
-    </script>
-    <%-js("js/prism")%>
+    <%if(theme.search.enable){%><%- partial("_partial/searchdlg") %>
+        <%}%>
+          <script>
+            mdui.setColorScheme('<%=theme.theme.colorScheme%>');
+            const navigationDrawer = document.querySelector("#drawer");
+            const mainlayout = document.querySelector("#main");
+            const breakpointCondition = mdui.breakpoint();
+            if (breakpointCondition.up('sm')) {
+              if (localStorage.getItem('navigationDrawer') == null) {
+                if("<%=theme.drawer.always_open%>"=="true")localStorage.setItem('navigationDrawer', "true");
+              }
+              if("<%=theme.drawer.always_open%>"=="true")navigationDrawer.setAttribute("open", (localStorage.getItem('navigationDrawer') == "true" ? true : false))
+            }
+            const menuBtn = document.querySelector("#menu-btn");
+            menuBtn.addEventListener("click", () => {
+              navigationDrawer.open = !navigationDrawer.open;
+              if("<%=theme.drawer.always_open%>"=="true")localStorage.setItem('navigationDrawer', navigationDrawer.open.toString());
+            });
+            const searchBtn = document.querySelector("#search-dlg-btn");
+            searchBtn.addEventListener("click", () => {
+              document.querySelector("#search-dlg").open = true;
+            });
+          </script>
+          <%-js("js/prism")%>
   </body>
 
 </html>

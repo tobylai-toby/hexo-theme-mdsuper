@@ -5,7 +5,8 @@
             <mdui-list-item rounded icon="<%= theme.drawer.menu[name].icon %>"
                 href="<%- url_for(theme.drawer.menu[name].url) %>"
                 <%if(is_current(theme.drawer.menu[name].url)){%>active<%}%>
-                <%if(theme.drawer.menu[name].home&&is_home()){%>active<%}%>>
+                <%if(theme.drawer.menu[name].home&&is_home()){%>active<%}%>
+                rel="next">
                 <%= name %>
             </mdui-list-item>
             

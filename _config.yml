@@ -6,6 +6,9 @@ favicon: "" # path( or url) of avatar such as /favicon.png
 
 # Navigation Drawer 导航栏
 drawer:
+  always_open: true
+  # true - if you open it once, it will open all the time util you close it 打开了就会一直打开
+  # false - open when you click the menu button, won't open when page loads 关闭，点击按钮才打开
   menu: # add your entries here 在此处添加您的条目
     Home: # display text for "home page" 主页
       icon: home # mdui icon
@@ -84,5 +87,5 @@ mdui:
 
 # install https://github.com/wzpan/hexo-generator-search and configure it following the readme
 search:
-  enable: true
+  enable: false
   xml: /search.xml # only supports xml

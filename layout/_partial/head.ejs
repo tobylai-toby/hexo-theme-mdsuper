@@ -14,6 +14,7 @@
                 <%= config.title %>
                   <%}%>
       </title>
+      <%- css("css/site")%>
       <%-css(theme.mdui.css)%>
       <style>
         /*禁用mdui对code的样式，因为它干扰了prism.js*/
@@ -23,14 +24,11 @@
         }
       </style>
       <%-js(theme.mdui.js)%>
-      <!-- <script src="/fancybox/fancybox.umd.js"></script>
-      <link rel="stylesheet" href="/fancybox/fancybox.css" /> -->
       <%- js("fancybox/fancybox.umd.js")%>
       <%- css("fancybox/fancybox")%>
       <%- js("carousel/carousel.umd.js")%>
       <%- css("carousel/carousel")%>
       <%- css("css/prism")%>
-        <%- css("css/site")%>
           <%- css("css/katex.min")%>
             <%- css("css/font-material-icon-filled/MaterialIconFilled")%>
               <!-- Filled -->

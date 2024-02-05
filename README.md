@@ -12,6 +12,8 @@ Supports some comment system and [Prismjs](https://prismjs.com/) highlight.
 - comment systems support
   - [twikoo](https://twikoo.js.org)
   - [gitalk](https://github.com/gitalk/gitalk)
+  - [waline](https://waline.js.org)
+
 - mdui v2
 - fancybox for images
 - local search for posts (requires [wzpan/hexo-generator-search](https://github.com/wzpan/hexo-generator-search))
@@ -48,6 +50,10 @@ cover: cover image url
 ---
 ```
 
+## Builtin Layouts
+- `post`: post layout
+- `onlycontent`: only content layout (comments are still enabled, disable it by using frontmatter `comments: false`)
+
 ## Configuration
 go to `your-hexo-site/themes/mdsuper/_config.yml` and configure it.
 ```yaml
@@ -58,6 +64,7 @@ theme:
 favicon: "" # path( or url) of avatar such as /favicon.png
 
 drawer:
+  always_open: false
   menu: 
     Home: 
       icon: home 
@@ -94,6 +101,8 @@ comment:
     distractionFreeMode: false  # Facebook-like distraction free mode
     #proxy: 
     # you may need a reverse proxy to support cors, default url may not work in some places(such as cn)
+  waline:
+    #...
 
 # supports twikoo comment system
 # this way only supports v0.2.0-beta, move to "comment" instead

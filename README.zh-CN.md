@@ -7,7 +7,12 @@
 ## 特性
 - front-matter `photos` 图库 (使用 fancybox & carousel)
 - prismjs 代码高亮
-- twikoo 评论系统
+- 评论系统
+- comment systems support
+  - [twikoo](https://twikoo.js.org)
+  - [gitalk](https://github.com/gitalk/gitalk)
+  - [waline](https://waline.js.org)
+  
 - mdui v2
 - fancybox 图片点击放大
 - 文章的本地搜索 (需要 [wzpan/hexo-generator-search](https://github.com/wzpan/hexo-generator-search))
@@ -44,6 +49,10 @@ cover: 封面URL
 ---
 ```
 
+## 内置页面布局
+- `post`: 文章布局
+- `onlycontent`: 只有内容的布局 (评论依然可用，使用frontmatter`comments: false`关闭)
+
 ## 配置
 去 `your-hexo-site/themes/mdsuper/_config.yml` 进行配置
 ```yaml
@@ -54,6 +63,7 @@ theme:
 favicon: "" # path( or url) of avatar such as /favicon.png
 
 drawer: # 这里是抽屉导航
+  always_open: true
   menu: 
     Home: # 显示的文字
       icon: home # mdui图标名
@@ -90,18 +100,8 @@ comment:
     distractionFreeMode: false  # Facebook-like distraction free mode
     #proxy: 
     # you may need a reverse proxy to support cors, default url may not work in some places(such as cn)
-
-# supports twikoo comment system
-# this way only supports v0.2.0-beta, move to "comment" instead
-# see: https://twikoo.js.org/frontend.html
-# twikoo: 
-#   enable: false
-#   cdn: js/twikoo.all.min.js 
-#   # twikoo settings:
-#   envId: ""
-#   region: '' 
-#   path: location.pathname # will eval this, be careful
-#   lang: 'zh-CN' 
+  waline:
+    # ...
 
 # display in the card at the top of the page under the subtitle
 display_index_top:
